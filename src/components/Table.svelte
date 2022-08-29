@@ -6,6 +6,8 @@
   import Row from "./Row.svelte";
   import { v4 as uuidv4 } from "uuid";
   import TaskForm from "./TaskForm.svelte";
+  import {toasts} from "svelte-toasts";
+
   let tasksQueue = [
     { id: uuidv4(), name: "task1" },
     { id: uuidv4(), name: "task2" },
@@ -75,6 +77,7 @@
   const onAddTask = (event) => {
     console.log(event);
     tasksQueue = [...tasksQueue, event.detail]
+    toasts.success('Success', 'task added',{ duration: 4000,showProgress:true })
   }
 </script>
 
