@@ -5,9 +5,14 @@ import {v4 as uuidv4 } from 'uuid'
     id:undefined,
     name: "",
   };
+
   const dispatch = createEventDispatcher();
   const onSubmitHandle = () => {
     dispatch('addTask', {...values, id:uuidv4()})
+    values = {
+      id:undefined,
+      name: "",
+    }
   }
 </script>
 <div class="p-2" style="width: 98%;margin:0 auto;">
