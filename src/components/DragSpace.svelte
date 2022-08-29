@@ -2,7 +2,6 @@
   import Col from "./Col.svelte";
   export let size = 12;
   export let zone = "";
-  let origin;
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
   const onDragOver = (event) => {
@@ -15,7 +14,6 @@
       event.dataTransfer.setData("origin", event.target.parentNode.id);
       event.dataTransfer.setData("id", event.target.id);
     }
-    // event.dataTransfer.setData("id", event.target.id);
     event.target.classList.add("dotted");
   };
   const onDragLeave = (event) => {
